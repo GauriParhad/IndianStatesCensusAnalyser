@@ -17,5 +17,15 @@ public class IndianStatesCensusAnalyser {
         } catch(IOException e){
             System.out.println(e);
         }
+        //Ability for anaylyser to load from CDV file using Iterator
+        CSVReader reader=new CSVReader(new FileReader("C://CensusAnalyser.csv"));
+        StringBuffer buffer =new StringBuffer();
+        String line[];
+        while((line= reader.readNext()) !=null){
+            for(int i =0; i<line.length;i++) {
+                System.out.print(line[i]+" ");
+            }
+            System.out.println(" ");
+        }
     }
 }
